@@ -35,6 +35,8 @@ Follow these steps to set up the project on your local machine:
    git clone https://github.com/yourusername/your-repo-name.git
    cd your-repo-name
    python -m venv venv
+   pip install django
+   pip install pillow
 source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
 python manage.py migrate
