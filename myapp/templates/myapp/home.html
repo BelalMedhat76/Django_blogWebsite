@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center animate__animated animate__fadeIn">
+    <h1 class="display-4 text-light">Welcome to My Awesome Blog</h1>
+    <p class="lead text-light">Check out our latest posts below!</p>
+</div>
+
+<div class="row mt-4">
+    {% for post in posts %}
+    <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
+        <div class="card h-100 shadow bg-dark text-light">
+            {% if post.image %}
+            <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}" style="height: 200px; object-fit: cover;">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.content|truncatewords:20 }}</p>
+                <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
